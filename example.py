@@ -22,7 +22,7 @@ data=yy
 min=np.min(data)-1
 max=np.max(data)+1
 
-#set the binning
+#set the binning for plotting and computing residuals
 sbins = np.arange(min,max,0.3)
 
 #number of Monte Carlo (MC) samples
@@ -35,8 +35,8 @@ mclab='%d MC samples'%(Nsamp)
 MCtot=np.zeros([len(sbins)-1])
 MCbins=np.zeros([Nsamp,len(sbins)-1])
 for i in range(Nsamp):
-    ss = samp.InverseSamp(data,Nran,80)
-    #plots each MC histogram (red)
+    ss = samp.InverseSamp(data,Nran,80) #returns Nran randomly sampled data points
+    #plots each binned MC sample (red)
     axs[0].hist(ss,sbins,histtype='step',color='r',alpha=0.5)
     #if statement used purely for printing legend properly
     if i==Nsamp-2:
