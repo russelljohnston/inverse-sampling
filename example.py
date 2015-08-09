@@ -18,12 +18,12 @@ axs=axs.ravel()
 xx,yy,zz = np.loadtxt('testdata.txt',usecols=(0,1,2), unpack='true')
 
 #set data distribution that we want to sample from
-data=zz
+data=yy
 min=np.min(data)-1
 max=np.max(data)+1
 
 #set the binning
-sbins = np.arange(min,max,0.2)
+sbins = np.arange(min,max,0.3)
 
 #number of Monte Carlo (MC) samples
 Nsamp=500
