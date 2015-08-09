@@ -15,10 +15,10 @@ axs=axs.ravel()
 
 
 ## READ IN THE TEST DATA ##
-mt,am = np.loadtxt('testdata.txt',usecols=(0,1), unpack='true')
+xx,yy,zz = np.loadtxt('testdata.txt',usecols=(0,1,2), unpack='true')
 
 #set data distribution that we want to sample from
-data=am
+data=zz
 min=np.min(data)-1
 max=np.max(data)+1
 
@@ -88,7 +88,7 @@ axs[1].set_xlabel('data')
 axs[1].set_ylabel('normalised residual')
 
 
-lg = axs[0].legend(loc='upper right',ncol=1,fontsize=12)
+lg = axs[0].legend(loc='upper left',ncol=1,fontsize=10)
 lg.draw_frame(False)
 
 plt.show()
