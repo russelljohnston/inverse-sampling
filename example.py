@@ -54,7 +54,7 @@ ndatabin, bins, = np.histogram(data,sbins)
 MCmean = MCtot/float(Nsamp)
 #variance
 VarMC = 1./(Nsamp-1.) * np.sum((MCmean - MCbins)**2,axis=0)
-top =MCmean - ndatabin
+top = ndatabin -MCmean 
 bottom=np.sqrt(VarMC)
 R=top/bottom
 #remove inf caused by 0/0
